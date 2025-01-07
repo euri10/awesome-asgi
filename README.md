@@ -23,10 +23,11 @@ Born in 2016 to power the Django Channels project, ASGI and its ecosystem have b
 - [Monitoring](#monitoring)
 - [Proxies](#proxies)
 - [Real-time web](#real-time-web)
+- [Utilities](#utilities)
 - [Resources](#resources)
   - [Reference](#reference)
   - [Talks](#publications)
-  - [Toy projects and examples](#toy-projects-and-examples)
+  - [Experiments and examples](#experiments-and-examples)
   - [Tutorials](#tutorials)
 - [Security](#security)
 - [Serialization](#serialization)
@@ -47,13 +48,16 @@ _Frameworks for building ASGI web applications._
 - [Django](https://docs.djangoproject.com/en/3.0/topics/async/) - The web framework for perfectionists with deadlines. Has native ASGI support since version 3.0.
 - [Falcon](https://falconframework.org) - The minimalist REST and app backend framework for Python, with a focus on reliability, correctness, and performance at scale. Native ASGI support since version 3.0.
 - [FastAPI](https://github.com/tiangolo/fastapi) - A modern, high-performance web framework for building APIs with Python 3.6+ based on standard Python type hints. Powered by Starlette and Pydantic. Supports HTTP and WebSockets.
+- [FastHTML](https://fastht.ml) - Modern web applications in pure Python. Built on solid web foundations, not the latest fads. Powerful and expressive, fast and lightweight, compact code, easy to learn and use.
 - [Guillotina](https://github.com/plone/guillotina) - Full-featured ASGI-compatible REST application framework, designed for high performance and horizontally scaling solutions.
+- [Litestar](https://litestar.dev/) - A [high-performance](https://docs.litestar.dev/latest/benchmarks.html) ASGI framework, which offers [msgspec-based](https://github.com/jcrist/msgspec) message parsing, Depdency-Injection, Authentication, OpenAPI docs, and more. Supports HTTP and Websockets. Supports asyncio and trio.
 - [Pyotr](https://pyotr.readthedocs.io) - A server framework, as well as a client library, for serving and consuming OpenAPI-based Web services. Based on Starlette and [HTTPX](https://www.python-httpx.org/).
 - [Quart](https://github.com/pgjones/quart) - A Python ASGI web microframework whose API is a superset of the Flask API. Supports HTTP (incl. SSE and HTTP/2 server push) and WebSockets.
 - [Responder](https://responder.readthedocs.io/en/latest/) - A familiar HTTP Service Framework for Python, powered by Starlette.
 - [Sanic](https://sanicframework.org/) - Sanic is a Python 3.6+ web server and web framework that's written to go fast. It allows the usage of the async/await syntax added in Python 3.5, which makes your code non-blocking and speedy. Supports HTTP and WebSockets.
 - [Starlette](https://www.starlette.io/) - The little ASGI framework that shines. Starlette is also an ASGI toolkit -- its modular design and reusable components made it foundational in the ASGI ecosystem. Supports HTTP and WebSockets. Supports asyncio and trio.
 - [Tonberry](https://ayehavgunne.github.io/Tonberry/) - Tonberry is an ASGI framework that takes a class based approach to routing. Influenced by CherryPy but made compatible with asyncio and WebSockets.
+- [Tremolo](https://github.com/nggit/tremolo/) - Zero dependency ASGI server and web framework for Python. Request and response limits, bandwidth throttling, resumable downloads, multipart form uploads / streaming downloads, worker reloading. Only 2,500 lines with a focus on minimalism and stability.
 
 ## Authentication
 
@@ -71,6 +75,7 @@ _Real-world applications that run on ASGI._
 
 <!-- sort_by:name -->
 
+- [ASGIWebDAV](https://github.com/rexzhang/asgi-webdav) - An asynchronous WebDAV server implementation. Support multi-provider, multi-account and permission control.
 - [Datasette](https://github.com/simonw/datasette/) - A tool for exploring and publishing data, including ASGI-compatible components and plugins.
 
 ## GraphQL
@@ -102,6 +107,7 @@ _Packages for use when running ASGI web applications behind proxies, or proxying
 
 <!-- sort_by:name -->
 
+- [asgi-proxy-lib](https://github.com/simonw/asgi-proxy-lib) - An ASGI function for proxying to a backend over HTTP.
 - [asgiproxy](https://github.com/valohai/asgiproxy) – Tools for building HTTP and Websocket proxies for ASGI.
 - [ProxyHeadersMiddleware](https://github.com/encode/uvicorn/blob/master/uvicorn/middleware/proxy_headers.py) - Use `X-Forwarded-Proto` and `X-Forwarded-For` headers set by a known and trusted proxy to make `client` and `scheme` reference the connecting client (shipped with Uvicorn).
 
@@ -112,6 +118,12 @@ _Packages for use when building real-time-capable ASGI web applications._
 <!-- sort_by:name -->
 
 - [python-socketio](https://python-socketio.readthedocs.io) - WebSocket clients and servers using Socket.IO. Includes an ASGI application wrapper.
+
+## Utilities
+
+_Packages for use when required integrations and extra features._
+
+- [asgi-htmx](https://github.com/florimondmanca/asgi-htmx/) - HTMX integration for ASGI applications.
 
 ## Resources
 
@@ -143,20 +155,25 @@ _Talks about ASGI._
 
 <!-- sort_by:date -->
 
+- 2023-06-05 - [Inside your Web framework: Intro to the ASGI spec, middleware and apps](https://www.youtube.com/watch?v=fcfyDvK_A6Q), Adrian Garcia Badaracco, PyConUS 2023.
 - 2019-06-15 - [An introduction to ASGI, Asynchronous Server Gateway Interface](https://www.youtube.com/watch?v=t3gCK9QqXWU), P G Jones, PyLondinium 2019.
 - 2019-04-12 - [Sketching out A Django redesign](https://www.youtube.com/watch?v=u8GSFEg5lnU), Tom Christie, DjangoCon Europe.
 - 2018-07-27 - [Quart; an ASGI alternative to Flask](https://www.youtube.com/watch?v=t8-Y7Kivuu0), P G Jones, EuroPython 2018.
 - 2018-05 - [Taking Django Async](https://www.youtube.com/watch?v=-7taKQnndfo), Andrew Godwin, PyCon.
 - 2017-11 - [Future Pythonic Web: ASGI & Daphne](https://www.youtube.com/watch?v=6xEKPsKBbD0), Dmitry Nazarov, PiterPy.
 
-### Toy projects and examples
+### Experiments and examples
 
-_Toy projects, examples and gists._
+_Software that experiments with ASGI or otherwise provides "No maintenance intended" code._
 
 <!-- sort_by:name -->
 
+- [asgi-background](https://github.com/adriangb/asgi-background) - Background tasks for any ASGI framework.
+- [asgi-lifespan-middleware](https://github.com/adriangb/asgi-lifespan) - ASGI middlewate to support ASGI lifespans using a simple async context manager interface.
+- [asgi-routing](https://github.com/adriangb/asgi-routing) - A high performance router written in Rust for the ASGI ecosystem. Built on top of `routrie` and `path-tree`.
 - [nanoasgi](https://github.com/qweeze/nanoasgi) - A tiny zero-dependency ASGI web framework.
 - [proxyx](https://github.com/florimondmanca/proxyx) - Proof of concept for a lightweight HTTP/1.1 proxy service built with ASGI and HTTPX.
+- [py-frameworks-bench](https://github.com/klen/py-frameworks-bench/) - A benchmark for (mostly-ASGI) Python async frameworks.
 
 ### Tutorials
 
@@ -208,7 +225,9 @@ _Web servers for ASGI applications._
 <!-- sort_by:name -->
 
 - [Daphne](http://github.com/django/daphne) - An HTTP, HTTP2 and WebSocket protocol server for ASGI, developed to power Django Channels.
+- [Granian](https://github.com/emmett-framework/granian) - A high performance Rust HTTP server for Python applications supporting ASGI/3 ASGI/3, RSGI and WSGI interfaces. Currenlty implementing HTTP 1 and 2 (eventually 3), HTTPS and websockets. 
 - [Hypercorn](https://pgjones.gitlab.io/hypercorn/index.html) - An ASGI server based on the sans-io hyper, h11, h2, and wsproto libraries. Supports HTTP/1, HTTP/2, WebSockets, ASGI 2.0 and ASGI 3.0. Compatible with asyncio, uvloop and trio worker types.
+- [NGINX Unit](https://unit.nginx.org) - A universal web app server that supports ASGI.
 - [Uvicorn](https://www.uvicorn.org/) - A fast ASGI server based on uvloop and httptools. Supports HTTP/1 and WebSockets.
 
 ## Testing
